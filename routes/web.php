@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.admin-edit-course-detail');
+    return view('user.student-delete-account');
 });
 
 Auth::routes();
