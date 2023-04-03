@@ -14,14 +14,21 @@ class Course extends Model
         'image',
         'cover',
     ];
-    public function users(){
+    public function users()
+    {
         $this->belongsToMany(User::class);
     }
-    public function tags(){
+    public function tags()
+    {
         $this->belongsToMany(Tag::class);
     }
+    public function Questions()
+    {
+        $this->belongsToMany(Question::class);
+    }
 
-    public function category(){
+    public function category()
+    {
         $this->belongsTo(Category::class);
     }
 }

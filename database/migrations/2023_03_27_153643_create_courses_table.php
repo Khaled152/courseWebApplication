@@ -18,13 +18,19 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->text('long_description');
             $table->string('image');
-            $table->string('type');
+            $table->string('level');
             $table->string('cover');
-            
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
-            
+            $table->string("leranTags");
+            $table->string("price");
+            $table->string("descount");
+            $table->string("totl_lectures");
+            $table->string("course_duration");
+            $table->boolean("featured");
+
+
+
             $table->timestamps();
         });
     }
