@@ -127,7 +127,7 @@
 					<ul class="navbar-nav flex-column" id="navbar-sidebar">
 
 						<!-- Menu item 1 -->
-						<li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i
+						<li class="nav-item"><a href="{{route('admin-home')}}" class="nav-link " id="admin"><i
 									class="bi bi-house fa-fw me-2"></i>Dashboard</a></li>
 
 						<!-- Title -->
@@ -269,13 +269,13 @@
 
 	<script>
 		let pramas = window.location.pathname.split("/")
-		
+
 		let  targetLink = document.getElementById(`${pramas[2]}-${pramas[3]}`)
 		pramas = pramas.splice(-pramas.length + 2).join("-")
-		
-	
-	
-	
+
+
+
+
 		if(targetLink.getAttribute("aria-expanded") != null){
 			targetLink.setAttribute("aria-expanded" , "true")
 			document.getElementById(targetLink.getAttribute("href").slice(1,55)).classList.add("show")
@@ -284,7 +284,7 @@
 		else
 			targetLink.classList.add("active")
 
-		
+
 
 	</script>
 

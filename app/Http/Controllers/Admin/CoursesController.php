@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller
 {
-   
+
     public function index(Request $req){
 
-        
+
         return view("admin.admin-course-list");
     }
 
+    public function create(){
+
+        return view("admin.admin-create-course");
+    }
 
 }
