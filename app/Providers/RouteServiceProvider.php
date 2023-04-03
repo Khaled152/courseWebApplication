@@ -17,6 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
+    protected $namespace = 'App\Http\Controllers';
     public const HOME = '/home';
 
     /**
@@ -26,16 +27,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->configureRateLimiting();
-
-        $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-        });
+      parent::boot();
     }
 
     /**
@@ -43,6 +35,35 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+
+     public function map(){
+        $this->mapApiRoutes();
+
+        $this->mapWebRoutes();
+        $this->mapAdminRoutes();
+     }
+     protected function mapApiRoutes()
+     {
+         Route::prefix('api')
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api.php'));
+     }
+     protected function mapWebRoutes()
+     {
+         Route::middleware('web')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/web.php'));
+     }
+     protected function mapAdminRoutes()
+     {
+         Route::middleware('web')
+             ->prefix('admin')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/admin.php'));
+     }
+
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {

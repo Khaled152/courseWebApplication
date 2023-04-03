@@ -84,10 +84,10 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/bootstrap-icons/bootstrap-icons.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/apexcharts/css/apexcharts.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/overlay-scrollbar/css/overlayscrollbars.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('vendor/choices/css/choices.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('vendor/glightbox/css/glightbox.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('vendor/quill/css/quill.snow.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('vendor/stepper/css/bs-stepper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/choices/css/choices.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/glightbox/css/glightbox.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/quill/css/quill.snow.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/stepper/css/bs-stepper.min.css')}}">
 
 
 
@@ -130,12 +130,14 @@
 
 				<!-- menu item 2 -->
 				<li class="nav-item">
-					<a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded="false" aria-controls="collapsepage">
+					
+					<a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded={{request()->is("admin/courses") ? "true" : "false"}} aria-controls="collapsepage">
 						<i class="bi bi-basket fa-fw me-2"></i>Courses
 					</a>
 					<!-- Submenu -->
-					<ul class="nav collapse flex-column" id="collapsepage" data-bs-parent="#navbar-sidebar">
-						<li class="nav-item"> <a class="nav-link" href="admin-course-list.html">All Courses</a></li>
+					
+					<ul class="nav collapse flex-column {{request()->is("admin/courses") ? "show" : ""}}" id="collapsepage" data-bs-parent="#navbar-sidebar">
+						<li class="nav-item  "> <a class="nav-link {{ request()->is("admin/courses") ? "active" : ""}}" href="{{route("admin-courses")}}">All Courses</a></li>
 						<li class="nav-item"> <a class="nav-link" href="admin-course-category.html">Course Category</a></li>
 						<li class="nav-item"> <a class="nav-link" href="admin-course-detail.html">Course Detail</a></li>
 					</ul>
@@ -233,10 +235,10 @@
 <script src="{{asset('resources/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
 <script src="{{asset('resources/vendor/apexcharts/js/apexcharts.min.js')}}"></script>
 <script src="{{asset('resources/vendor/overlay-scrollbar/js/overlayscrollbars.min.js')}}"></script>
-<script src="{{asset('vendor/choices/js/choices.min.js')}}"></script>
-<script src="{{asset('vendor/glightbox/js/glightbox.js')}}"></script>
-<script src="{{asset('vendor/quill/js/quill.min.js')}}"></script>
-<script src="{{asset('vendor/stepper/js/bs-stepper.min.js')}}"></script>
+<script src="{{asset('resources/vendor/choices/js/choices.min.js')}}"></script>
+<script src="{{asset('resources/vendor/glightbox/js/glightbox.js')}}"></script>
+<script src="{{asset('resources/vendor/quill/js/quill.min.js')}}"></script>
+<script src="{{asset('resources/vendor/stepper/js/bs-stepper.min.js')}}"></script>
 
 <!-- Template Functions -->
 <script src="{{asset('resources/js/functions.js')}}"></script>

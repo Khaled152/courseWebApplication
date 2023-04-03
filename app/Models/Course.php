@@ -20,4 +20,8 @@ class Course extends Model
     public function tags(){
         $this->belongsToMany(Tag::class);
     }
+
+    public function category(){
+        $this->belongsTo(Category::class);
+    }
 }
