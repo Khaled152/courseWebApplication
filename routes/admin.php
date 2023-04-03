@@ -21,9 +21,13 @@ Route::get('/instructors/requests', function () {
 })->name("admin-instructors-requests");
 
 Route::group(['namespace'=>'Admin' ], function(){
+        #courses
     Route::get('/courses','CoursesController@index')->name('admin-courses');
     Route::get('/courses/add-course','CoursesController@create')->name('admin-course-create');
+
+    #caregory
     Route::get('/courses/categories','CategoryController@index')->name('admin-courses-categories');
+    Route::get('/courses/add-category','CategoryController@create')->name('admin-category-create');
 });
 
 
