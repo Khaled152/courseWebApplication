@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('image');
             $table->string('type');
             $table->string('cover');
-            /*
+            
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
-            */
+            
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!-- Mirrored from eduport.webestica.com/admin-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Mar 2023 01:34:15 GMT -->
+
 <head>
 	<title>Eduport- LMS, Education and Course Theme</title>
 
@@ -33,38 +34,38 @@
 		setTheme(getPreferredTheme())
 
 		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
 				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
 
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
 					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
 				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
 
 			}
 		})
@@ -77,15 +78,17 @@
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
 
 	<!-- Plugins CSS -->
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/font-awesome/css/all.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/bootstrap-icons/bootstrap-icons.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/apexcharts/css/apexcharts.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/overlay-scrollbar/css/overlayscrollbars.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/choices/css/choices.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/glightbox/css/glightbox.css')}}">
+	<link rel="stylesheet" type="text/css"
+		href="{{asset('resources/vendor/overlay-scrollbar/css/overlayscrollbars.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/choices/css/choices.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/glightbox/css/glightbox.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/quill/css/quill.snow.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('resources/vendor/stepper/css/bs-stepper.min.css')}}">
 
@@ -102,146 +105,188 @@
 <body>
 
 
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
 
-<!-- Sidebar START -->
-<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
+		<!-- Sidebar START -->
+		<nav class="navbar sidebar navbar-expand-xl navbar-dark bg-dark">
 
-	<!-- Navbar brand for xl START -->
-	<div class="d-flex align-items-center">
-		<a class="navbar-brand" href="index.html">
-			<img class="navbar-brand-item" src="logo-light.svg" alt="">
-		</a>
-	</div>
-	<!-- Navbar brand for xl END -->
+			<!-- Navbar brand for xl START -->
+			<div class="d-flex align-items-center">
+				<a class="navbar-brand" href="index.html">
+					<img class="navbar-brand-item" src="logo-light.svg" alt="">
+				</a>
+			</div>
+			<!-- Navbar brand for xl END -->
 
-	<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1" id="offcanvasSidebar">
-		<div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
+			<div class="offcanvas offcanvas-start flex-row custom-scrollbar h-100" data-bs-backdrop="true" tabindex="-1"
+				id="offcanvasSidebar">
+				<div class="offcanvas-body sidebar-content d-flex flex-column bg-dark">
 
-			<!-- Sidebar menu START -->
-			<ul class="navbar-nav flex-column" id="navbar-sidebar">
+					<!-- Sidebar menu START -->
+					<ul class="navbar-nav flex-column" id="navbar-sidebar">
 
-				<!-- Menu item 1 -->
-				<li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i class="bi bi-house fa-fw me-2"></i>Dashboard</a></li>
+						<!-- Menu item 1 -->
+						<li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i
+									class="bi bi-house fa-fw me-2"></i>Dashboard</a></li>
 
-				<!-- Title -->
-				<li class="nav-item ms-2 my-2">Pages</li>
+						<!-- Title -->
+						<li class="nav-item ms-2 my-2">Pages</li>
 
-				<!-- menu item 2 -->
-				<li class="nav-item">
-					
-					<a class="nav-link" data-bs-toggle="collapse" href="#collapsepage" role="button" aria-expanded={{request()->is("admin/courses") ? "true" : "false"}} aria-controls="collapsepage">
-						<i class="bi bi-basket fa-fw me-2"></i>Courses
-					</a>
-					<!-- Submenu -->
-					
-					<ul class="nav collapse flex-column {{request()->is("admin/courses") ? "show" : ""}}" id="collapsepage" data-bs-parent="#navbar-sidebar">
-						<li class="nav-item  "> <a class="nav-link {{ request()->is("admin/courses") ? "active" : ""}}" href="{{route("admin-courses")}}">All Courses</a></li>
-						<li class="nav-item"> <a class="nav-link" href="admin-course-category.html">Course Category</a></li>
-						<li class="nav-item"> <a class="nav-link" href="admin-course-detail.html">Course Detail</a></li>
-					</ul>
-				</li>
+						<!-- menu item 2 -->
+						<li class="nav-item section-head">
 
-				<!-- Menu item 3 -->
-				<li class="nav-item"> <a class="nav-link" href="admin-student-list.html"><i class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
-
-				<!-- Menu item 4 -->
-				<li class="nav-item">
-					<a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
-						<i class="fas fa-user-tie fa-fw me-2"></i>Instructors
-					</a>
-					<!-- Submenu -->
-					<ul class="nav collapse flex-column" id="collapseinstructors" data-bs-parent="#navbar-sidebar">
-						<li class="nav-item"> <a class="nav-link" href="admin-instructor-list.html">Instructors</a></li>
-						<li class="nav-item"> <a class="nav-link" href="admin-instructor-detail.html">Instructor Detail</a></li>
-						<li class="nav-item">
-							<a class="nav-link" href="admin-instructor-request.html">Instructor requests
-								<span class="badge text-bg-success rounded-circle ms-2">2</span>
+							<a class="nav-link" id="admin-courses" data-bs-toggle="collapse" href="#courses"
+								role="button" aria-expanded="false" aria-controls="courses">
+								<i class="bi bi-basket fa-fw me-2"></i>Courses
 							</a>
+							<!-- Submenu -->
+
+							<ul class="nav collapse flex-column" id="courses" data-bs-parent="#navbar-sidebar">
+								<li class="nav-item  "> <a class="nav-link" id="admin-courses-href" href="{{route("admin-courses")}}">All Courses</a></li>
+								<li class="nav-item"> <a class="nav-link" id="admin-courses-categories-href" href="{{route("admin-courses-categories")}}">Course Category</a></li>
+								<li class="nav-item"> <a class="nav-link" href="admin-course-detail.html">Course
+										Detail</a></li>
+							</ul>
 						</li>
+
+						<!-- Menu item 3 -->
+						<li class="nav-item"> <a class="nav-link" id="admin-students" href="{{route("admin-students")}}"><i
+									class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
+
+						<!-- Menu item 4 -->
+						<li class="nav-item">
+							<a class="nav-link" id="admin-instructors" data-bs-toggle="collapse" href="#instructors" role="button"
+								aria-expanded="false" aria-controls="instructors">
+								<i class="fas fa-user-tie fa-fw me-2"></i>Instructors
+							</a>
+							<!-- Submenu -->
+							<ul class="nav collapse flex-column" id="instructors"
+								data-bs-parent="#navbar-sidebar">
+								<li class="nav-item"> <a class="nav-link"
+										href="{{route("admin-instructors")}}" id="admin-instructors-href" >Instructors</a></li>
+								<li class="nav-item"> <a class="nav-link" href="admin-instructor-detail.html">Instructor
+										Detail</a></li>
+								<li class="nav-item">
+									<a class="nav-link" id="admin-instructors-requests-href" href="{{route("admin-instructors-requests")}}">Instructor requests
+										<span class="badge text-bg-success rounded-circle ms-2">2</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- Menu item 5 -->
+						<li class="nav-item"> <a class="nav-link" href="admin-review.html"><i
+									class="far fa-comment-dots fa-fw me-2"></i>Reviews</a></li>
+
+						<!-- Menu item 6 -->
+						<li class="nav-item"> <a class="nav-link" href="admin-earning.html"><i
+									class="far fa-chart-bar fa-fw me-2"></i>Earnings</a></li>
+
+						<!-- Menu item 7 -->
+						<li class="nav-item"> <a class="nav-link" href="admin-setting.html"><i
+									class="fas fa-user-cog fa-fw me-2"></i>Admin Settings</a></li>
+
+						<!-- Menu item 8 -->
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="collapse" href="#collapseauthentication" role="button"
+								aria-expanded="false" aria-controls="collapseauthentication">
+								<i class="bi bi-lock fa-fw me-2"></i>Authentication
+							</a>
+							<!-- Submenu -->
+							<ul class="nav collapse flex-column" id="collapseauthentication"
+								data-bs-parent="#navbar-sidebar">
+								<li class="nav-item"> <a class="nav-link" href="sign-up.html">Sign Up</a></li>
+								<li class="nav-item"> <a class="nav-link" href="sign-in.html">Sign In</a></li>
+								<li class="nav-item"> <a class="nav-link" href="forgot-password.html">Forgot
+										Password</a></li>
+								<li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
+							</ul>
+						</li>
+
+						<!-- Title -->
+						<li class="nav-item ms-2 my-2">Documentation</li>
+
+						<!-- Menu item 9 -->
+						<li class="nav-item"> <a class="nav-link" href="docs/index.html"><i
+									class="far fa-clipboard fa-fw me-2"></i>Documentation</a></li>
+
+						<!-- Menu item 10 -->
+						<li class="nav-item"> <a class="nav-link" href="docs/changelog.html"><i
+									class="fas fa-sitemap fa-fw me-2"></i>Changelog</a></li>
 					</ul>
-				</li>
+					<!-- Sidebar menu end -->
 
-				<!-- Menu item 5 -->
-				<li class="nav-item"> <a class="nav-link" href="admin-review.html"><i class="far fa-comment-dots fa-fw me-2"></i>Reviews</a></li>
+					<!-- Sidebar footer START -->
+					<div class="px-3 mt-auto pt-3">
+						<div class="d-flex align-items-center justify-content-between text-primary-hover">
+							<a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip"
+								data-bs-placement="top" title="Settings">
+								<i class="bi bi-gear-fill"></i>
+							</a>
+							<a class="h5 mb-0 text-body" href="index.html" data-bs-toggle="tooltip"
+								data-bs-placement="top" title="Home">
+								<i class="bi bi-globe"></i>
+							</a>
+							<a class="h5 mb-0 text-body" href="sign-in.html" data-bs-toggle="tooltip"
+								data-bs-placement="top" title="Sign out">
+								<i class="bi bi-power"></i>
+							</a>
+						</div>
+					</div>
+					<!-- Sidebar footer END -->
 
-				<!-- Menu item 6 -->
-				<li class="nav-item"> <a class="nav-link" href="admin-earning.html"><i class="far fa-chart-bar fa-fw me-2"></i>Earnings</a></li>
-
-				<!-- Menu item 7 -->
-				<li class="nav-item"> <a class="nav-link" href="admin-setting.html"><i class="fas fa-user-cog fa-fw me-2"></i>Admin Settings</a></li>
-
-				<!-- Menu item 8 -->
-				<li class="nav-item">
-					<a class="nav-link" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
-						<i class="bi bi-lock fa-fw me-2"></i>Authentication
-					</a>
-					<!-- Submenu -->
-					<ul class="nav collapse flex-column" id="collapseauthentication" data-bs-parent="#navbar-sidebar">
-						<li class="nav-item"> <a class="nav-link" href="sign-up.html">Sign Up</a></li>
-						<li class="nav-item"> <a class="nav-link" href="sign-in.html">Sign In</a></li>
-						<li class="nav-item"> <a class="nav-link" href="forgot-password.html">Forgot Password</a></li>
-						<li class="nav-item"> <a class="nav-link" href="admin-error-404.html">Error 404</a></li>
-					</ul>
-				</li>
-
-				<!-- Title -->
-				<li class="nav-item ms-2 my-2">Documentation</li>
-
-				<!-- Menu item 9 -->
-				<li class="nav-item"> <a class="nav-link" href="docs/index.html"><i class="far fa-clipboard fa-fw me-2"></i>Documentation</a></li>
-
-				<!-- Menu item 10 -->
-				<li class="nav-item"> <a class="nav-link" href="docs/changelog.html"><i class="fas fa-sitemap fa-fw me-2"></i>Changelog</a></li>
-			</ul>
-			<!-- Sidebar menu end -->
-
-			<!-- Sidebar footer START -->
-			<div class="px-3 mt-auto pt-3">
-				<div class="d-flex align-items-center justify-content-between text-primary-hover">
-						<a class="h5 mb-0 text-body" href="admin-setting.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
-							<i class="bi bi-gear-fill"></i>
-						</a>
-						<a class="h5 mb-0 text-body" href="index.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
-							<i class="bi bi-globe"></i>
-						</a>
-						<a class="h5 mb-0 text-body" href="sign-in.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Sign out">
-							<i class="bi bi-power"></i>
-						</a>
 				</div>
 			</div>
-			<!-- Sidebar footer END -->
+		</nav>
+		<!-- Sidebar END -->
+		<div>
 
+
+			@yield('content')
 		</div>
-	</div>
-</nav>
-<!-- Sidebar END -->
-<div>
 
 
-	@yield('content')
-</div>
+	</main>
+	<!-- Back to top -->
+	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+	<!-- Bootstrap JS -->
+	<script src="{{asset('resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+	<!-- resources/Vendors -->
+	<script src="{{asset('resources/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
+	<script src="{{asset('resources/vendor/apexcharts/js/apexcharts.min.js')}}"></script>
+	<script src="{{asset('resources/vendor/overlay-scrollbar/js/overlayscrollbars.min.js')}}"></script>
+	<script src="{{asset('resources/vendor/choices/js/choices.min.js')}}"></script>
+	<script src="{{asset('resources/vendor/glightbox/js/glightbox.js')}}"></script>
+	<script src="{{asset('resources/vendor/quill/js/quill.min.js')}}"></script>
+	<script src="{{asset('resources/vendor/stepper/js/bs-stepper.min.js')}}"></script>
+
+	<!-- Template Functions -->
+	<script src="{{asset('resources/js/functions.js')}}"></script>
 
 
-</main>
-<!-- Back to top -->
-<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+	<script>
+		let pramas = window.location.pathname.split("/")
+		
+		let  targetLink = document.getElementById(`${pramas[2]}-${pramas[3]}`)
+		pramas = pramas.splice(-pramas.length + 2).join("-")
+		
+	
+	
+	
+		if(targetLink.getAttribute("aria-expanded") != null){
+			targetLink.setAttribute("aria-expanded" , "true")
+			document.getElementById(targetLink.getAttribute("href").slice(1,55)).classList.add("show")
+			document.getElementById(`${pramas}-href`).classList.add("active")
+		}
+		else
+			targetLink.classList.add("active")
 
-<!-- Bootstrap JS -->
-<script src="{{asset('resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+		
 
-<!-- resources/Vendors -->
-<script src="{{asset('resources/vendor/purecounterjs/dist/purecounter_vanilla.js')}}"></script>
-<script src="{{asset('resources/vendor/apexcharts/js/apexcharts.min.js')}}"></script>
-<script src="{{asset('resources/vendor/overlay-scrollbar/js/overlayscrollbars.min.js')}}"></script>
-<script src="{{asset('resources/vendor/choices/js/choices.min.js')}}"></script>
-<script src="{{asset('resources/vendor/glightbox/js/glightbox.js')}}"></script>
-<script src="{{asset('resources/vendor/quill/js/quill.min.js')}}"></script>
-<script src="{{asset('resources/vendor/stepper/js/bs-stepper.min.js')}}"></script>
-
-<!-- Template Functions -->
-<script src="{{asset('resources/js/functions.js')}}"></script>
+	</script>
 
 
 
@@ -251,6 +296,5 @@
 
 
 </body>
+
 </html>
-
-
